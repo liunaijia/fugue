@@ -13,6 +13,7 @@
 		453BE2151AC15DE100D9DE4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 453BE2141AC15DE100D9DE4C /* Images.xcassets */; };
 		453BE2181AC15DE100D9DE4C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 453BE2161AC15DE100D9DE4C /* LaunchScreen.xib */; };
 		453BE2241AC15DE100D9DE4C /* fugueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453BE2231AC15DE100D9DE4C /* fugueTests.swift */; };
+		A3007FDE2B9010A14D5214ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5F1FD89D87BD9675836012 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		201E9CE62707212D958D412A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		453BE2081AC15DE100D9DE4C /* fugue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fugue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		453BE20C1AC15DE100D9DE4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		453BE20D1AC15DE100D9DE4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +38,8 @@
 		453BE21D1AC15DE100D9DE4C /* fugueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fugueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		453BE2221AC15DE100D9DE4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		453BE2231AC15DE100D9DE4C /* fugueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fugueTests.swift; sourceTree = "<group>"; };
+		7B5F1FD89D87BD9675836012 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAD00159F530A76DD5005E93 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3007FDE2B9010A14D5214ED /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +67,8 @@
 				453BE20A1AC15DE100D9DE4C /* fugue */,
 				453BE2201AC15DE100D9DE4C /* fugueTests */,
 				453BE2091AC15DE100D9DE4C /* Products */,
+				E6E594AF15689A889C65DD9B /* Pods */,
+				5A21AE62A1C57DD760C75CA5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +119,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5A21AE62A1C57DD760C75CA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B5F1FD89D87BD9675836012 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6E594AF15689A889C65DD9B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BAD00159F530A76DD5005E93 /* Pods.debug.xcconfig */,
+				201E9CE62707212D958D412A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 453BE2271AC15DE100D9DE4C /* Build configuration list for PBXNativeTarget "fugue" */;
 			buildPhases = (
+				99BE44801B8C8CE6BAF0A96E /* Check Pods Manifest.lock */,
 				453BE2041AC15DE100D9DE4C /* Sources */,
 				453BE2051AC15DE100D9DE4C /* Frameworks */,
 				453BE2061AC15DE100D9DE4C /* Resources */,
+				713CAB072C908473187DAF83 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,6 +232,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		713CAB072C908473187DAF83 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99BE44801B8C8CE6BAF0A96E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		453BE2041AC15DE100D9DE4C /* Sources */ = {
@@ -336,6 +395,7 @@
 		};
 		453BE2281AC15DE100D9DE4C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAD00159F530A76DD5005E93 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = fugue/Info.plist;
@@ -346,6 +406,7 @@
 		};
 		453BE2291AC15DE100D9DE4C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 201E9CE62707212D958D412A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = fugue/Info.plist;
@@ -407,6 +468,7 @@
 				453BE2291AC15DE100D9DE4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		453BE22A1AC15DE100D9DE4C /* Build configuration list for PBXNativeTarget "fugueTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +477,7 @@
 				453BE22C1AC15DE100D9DE4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
