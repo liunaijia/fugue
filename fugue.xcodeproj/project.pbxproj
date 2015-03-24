@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		453BE20E1AC15DE100D9DE4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453BE20D1AC15DE100D9DE4C /* AppDelegate.swift */; };
+		453BE2101AC15DE100D9DE4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453BE20F1AC15DE100D9DE4C /* ViewController.swift */; };
+		453BE2131AC15DE100D9DE4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 453BE2111AC15DE100D9DE4C /* Main.storyboard */; };
+		453BE2151AC15DE100D9DE4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 453BE2141AC15DE100D9DE4C /* Images.xcassets */; };
+		453BE2181AC15DE100D9DE4C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 453BE2161AC15DE100D9DE4C /* LaunchScreen.xib */; };
+		453BE2241AC15DE100D9DE4C /* fugueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453BE2231AC15DE100D9DE4C /* fugueTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		453BE21E1AC15DE100D9DE4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 453BE2001AC15DE000D9DE4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 453BE2071AC15DE100D9DE4C;
+			remoteInfo = fugue;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		453BE2081AC15DE100D9DE4C /* fugue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fugue.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		453BE20C1AC15DE100D9DE4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		453BE20D1AC15DE100D9DE4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		453BE20F1AC15DE100D9DE4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		453BE2121AC15DE100D9DE4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		453BE2141AC15DE100D9DE4C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		453BE2171AC15DE100D9DE4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		453BE21D1AC15DE100D9DE4C /* fugueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fugueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		453BE2221AC15DE100D9DE4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		453BE2231AC15DE100D9DE4C /* fugueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fugueTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		453BE2051AC15DE100D9DE4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		453BE21A1AC15DE100D9DE4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		453BE1FF1AC15DE000D9DE4C = {
+			isa = PBXGroup;
+			children = (
+				453BE20A1AC15DE100D9DE4C /* fugue */,
+				453BE2201AC15DE100D9DE4C /* fugueTests */,
+				453BE2091AC15DE100D9DE4C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		453BE2091AC15DE100D9DE4C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				453BE2081AC15DE100D9DE4C /* fugue.app */,
+				453BE21D1AC15DE100D9DE4C /* fugueTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		453BE20A1AC15DE100D9DE4C /* fugue */ = {
+			isa = PBXGroup;
+			children = (
+				453BE20D1AC15DE100D9DE4C /* AppDelegate.swift */,
+				453BE20F1AC15DE100D9DE4C /* ViewController.swift */,
+				453BE2111AC15DE100D9DE4C /* Main.storyboard */,
+				453BE2141AC15DE100D9DE4C /* Images.xcassets */,
+				453BE2161AC15DE100D9DE4C /* LaunchScreen.xib */,
+				453BE20B1AC15DE100D9DE4C /* Supporting Files */,
+			);
+			path = fugue;
+			sourceTree = "<group>";
+		};
+		453BE20B1AC15DE100D9DE4C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				453BE20C1AC15DE100D9DE4C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		453BE2201AC15DE100D9DE4C /* fugueTests */ = {
+			isa = PBXGroup;
+			children = (
+				453BE2231AC15DE100D9DE4C /* fugueTests.swift */,
+				453BE2211AC15DE100D9DE4C /* Supporting Files */,
+			);
+			path = fugueTests;
+			sourceTree = "<group>";
+		};
+		453BE2211AC15DE100D9DE4C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				453BE2221AC15DE100D9DE4C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		453BE2071AC15DE100D9DE4C /* fugue */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 453BE2271AC15DE100D9DE4C /* Build configuration list for PBXNativeTarget "fugue" */;
+			buildPhases = (
+				453BE2041AC15DE100D9DE4C /* Sources */,
+				453BE2051AC15DE100D9DE4C /* Frameworks */,
+				453BE2061AC15DE100D9DE4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = fugue;
+			productName = fugue;
+			productReference = 453BE2081AC15DE100D9DE4C /* fugue.app */;
+			productType = "com.apple.product-type.application";
+		};
+		453BE21C1AC15DE100D9DE4C /* fugueTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 453BE22A1AC15DE100D9DE4C /* Build configuration list for PBXNativeTarget "fugueTests" */;
+			buildPhases = (
+				453BE2191AC15DE100D9DE4C /* Sources */,
+				453BE21A1AC15DE100D9DE4C /* Frameworks */,
+				453BE21B1AC15DE100D9DE4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				453BE21F1AC15DE100D9DE4C /* PBXTargetDependency */,
+			);
+			name = fugueTests;
+			productName = fugueTests;
+			productReference = 453BE21D1AC15DE100D9DE4C /* fugueTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		453BE2001AC15DE000D9DE4C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Naijia Liu";
+				TargetAttributes = {
+					453BE2071AC15DE100D9DE4C = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					453BE21C1AC15DE100D9DE4C = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 453BE2071AC15DE100D9DE4C;
+					};
+				};
+			};
+			buildConfigurationList = 453BE2031AC15DE000D9DE4C /* Build configuration list for PBXProject "fugue" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 453BE1FF1AC15DE000D9DE4C;
+			productRefGroup = 453BE2091AC15DE100D9DE4C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				453BE2071AC15DE100D9DE4C /* fugue */,
+				453BE21C1AC15DE100D9DE4C /* fugueTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		453BE2061AC15DE100D9DE4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				453BE2131AC15DE100D9DE4C /* Main.storyboard in Resources */,
+				453BE2181AC15DE100D9DE4C /* LaunchScreen.xib in Resources */,
+				453BE2151AC15DE100D9DE4C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		453BE21B1AC15DE100D9DE4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		453BE2041AC15DE100D9DE4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				453BE2101AC15DE100D9DE4C /* ViewController.swift in Sources */,
+				453BE20E1AC15DE100D9DE4C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		453BE2191AC15DE100D9DE4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				453BE2241AC15DE100D9DE4C /* fugueTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		453BE21F1AC15DE100D9DE4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 453BE2071AC15DE100D9DE4C /* fugue */;
+			targetProxy = 453BE21E1AC15DE100D9DE4C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		453BE2111AC15DE100D9DE4C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				453BE2121AC15DE100D9DE4C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		453BE2161AC15DE100D9DE4C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				453BE2171AC15DE100D9DE4C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		453BE2251AC15DE100D9DE4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		453BE2261AC15DE100D9DE4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		453BE2281AC15DE100D9DE4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = fugue/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		453BE2291AC15DE100D9DE4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = fugue/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		453BE22B1AC15DE100D9DE4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = fugueTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fugue.app/fugue";
+			};
+			name = Debug;
+		};
+		453BE22C1AC15DE100D9DE4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = fugueTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fugue.app/fugue";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		453BE2031AC15DE000D9DE4C /* Build configuration list for PBXProject "fugue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				453BE2251AC15DE100D9DE4C /* Debug */,
+				453BE2261AC15DE100D9DE4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		453BE2271AC15DE100D9DE4C /* Build configuration list for PBXNativeTarget "fugue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				453BE2281AC15DE100D9DE4C /* Debug */,
+				453BE2291AC15DE100D9DE4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		453BE22A1AC15DE100D9DE4C /* Build configuration list for PBXNativeTarget "fugueTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				453BE22B1AC15DE100D9DE4C /* Debug */,
+				453BE22C1AC15DE100D9DE4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 453BE2001AC15DE000D9DE4C /* Project object */;
+}
