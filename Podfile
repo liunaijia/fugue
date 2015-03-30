@@ -1,3 +1,4 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '7.0'
+platform :ios, '8.0'
 pod 'AFNetworking', '~> 2.5'
+pod 'HTMLReader'

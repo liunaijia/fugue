@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45138D331AC915560066067E /* ArticleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45138D321AC915560066067E /* ArticleHeader.swift */; };
+		45138D351AC91FB20066067E /* InfoQArticleResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45138D341AC91FB20066067E /* InfoQArticleResponseSerializer.swift */; };
+		45138D371AC92F6E0066067E /* ArticleBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45138D361AC92F6E0066067E /* ArticleBody.swift */; };
 		453BE20E1AC15DE100D9DE4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453BE20D1AC15DE100D9DE4C /* AppDelegate.swift */; };
 		453BE2101AC15DE100D9DE4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453BE20F1AC15DE100D9DE4C /* ViewController.swift */; };
 		453BE2131AC15DE100D9DE4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 453BE2111AC15DE100D9DE4C /* Main.storyboard */; };
 		453BE2151AC15DE100D9DE4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 453BE2141AC15DE100D9DE4C /* Images.xcassets */; };
 		453BE2181AC15DE100D9DE4C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 453BE2161AC15DE100D9DE4C /* LaunchScreen.xib */; };
 		453BE2241AC15DE100D9DE4C /* fugueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453BE2231AC15DE100D9DE4C /* fugueTests.swift */; };
+		455DFF541AC29BD000235DE8 /* InfoQArticleListResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DFF531AC29BD000235DE8 /* InfoQArticleListResponseSerializer.swift */; };
 		A3007FDE2B9010A14D5214ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5F1FD89D87BD9675836012 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +32,9 @@
 
 /* Begin PBXFileReference section */
 		201E9CE62707212D958D412A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		45138D321AC915560066067E /* ArticleHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleHeader.swift; sourceTree = "<group>"; };
+		45138D341AC91FB20066067E /* InfoQArticleResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoQArticleResponseSerializer.swift; sourceTree = "<group>"; };
+		45138D361AC92F6E0066067E /* ArticleBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleBody.swift; sourceTree = "<group>"; };
 		453BE2081AC15DE100D9DE4C /* fugue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fugue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		453BE20C1AC15DE100D9DE4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		453BE20D1AC15DE100D9DE4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +45,8 @@
 		453BE21D1AC15DE100D9DE4C /* fugueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fugueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		453BE2221AC15DE100D9DE4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		453BE2231AC15DE100D9DE4C /* fugueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fugueTests.swift; sourceTree = "<group>"; };
+		455DFF521AC2549F00235DE8 /* Fugue-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fugue-Bridging-Header.h"; sourceTree = "<group>"; };
+		455DFF531AC29BD000235DE8 /* InfoQArticleListResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoQArticleListResponseSerializer.swift; sourceTree = "<group>"; };
 		7B5F1FD89D87BD9675836012 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD00159F530A76DD5005E93 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +99,11 @@
 				453BE2141AC15DE100D9DE4C /* Images.xcassets */,
 				453BE2161AC15DE100D9DE4C /* LaunchScreen.xib */,
 				453BE20B1AC15DE100D9DE4C /* Supporting Files */,
+				455DFF521AC2549F00235DE8 /* Fugue-Bridging-Header.h */,
+				455DFF531AC29BD000235DE8 /* InfoQArticleListResponseSerializer.swift */,
+				45138D321AC915560066067E /* ArticleHeader.swift */,
+				45138D341AC91FB20066067E /* InfoQArticleResponseSerializer.swift */,
+				45138D361AC92F6E0066067E /* ArticleBody.swift */,
 			);
 			path = fugue;
 			sourceTree = "<group>";
@@ -271,7 +285,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45138D351AC91FB20066067E /* InfoQArticleResponseSerializer.swift in Sources */,
+				45138D331AC915560066067E /* ArticleHeader.swift in Sources */,
 				453BE2101AC15DE100D9DE4C /* ViewController.swift in Sources */,
+				455DFF541AC29BD000235DE8 /* InfoQArticleListResponseSerializer.swift in Sources */,
+				45138D371AC92F6E0066067E /* ArticleBody.swift in Sources */,
 				453BE20E1AC15DE100D9DE4C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +419,7 @@
 				INFOPLIST_FILE = fugue/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "fugue/Fugue-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -412,6 +431,7 @@
 				INFOPLIST_FILE = fugue/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "fugue/Fugue-Bridging-Header.h";
 			};
 			name = Release;
 		};
