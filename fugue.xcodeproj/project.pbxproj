@@ -10,6 +10,10 @@
 		45138D331AC915560066067E /* ArticleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45138D321AC915560066067E /* ArticleHeader.swift */; };
 		45138D351AC91FB20066067E /* InfoQArticleResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45138D341AC91FB20066067E /* InfoQArticleResponseSerializer.swift */; };
 		45138D371AC92F6E0066067E /* ArticleBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45138D361AC92F6E0066067E /* ArticleBody.swift */; };
+		45138D391AC941160066067E /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45138D381AC941160066067E /* ArticleListView.swift */; };
+		45138D3B1AC942DC0066067E /* ArticleRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45138D3A1AC942DC0066067E /* ArticleRepo.swift */; };
+		45138D6F1AC944FF0066067E /* fugue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45138D6D1AC944FF0066067E /* fugue.xcdatamodeld */; };
+		45138D711AC945660066067E /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45138D701AC945660066067E /* Article.swift */; };
 		453BE20E1AC15DE100D9DE4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453BE20D1AC15DE100D9DE4C /* AppDelegate.swift */; };
 		453BE2101AC15DE100D9DE4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453BE20F1AC15DE100D9DE4C /* ViewController.swift */; };
 		453BE2131AC15DE100D9DE4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 453BE2111AC15DE100D9DE4C /* Main.storyboard */; };
@@ -35,6 +39,10 @@
 		45138D321AC915560066067E /* ArticleHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleHeader.swift; sourceTree = "<group>"; };
 		45138D341AC91FB20066067E /* InfoQArticleResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoQArticleResponseSerializer.swift; sourceTree = "<group>"; };
 		45138D361AC92F6E0066067E /* ArticleBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleBody.swift; sourceTree = "<group>"; };
+		45138D381AC941160066067E /* ArticleListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
+		45138D3A1AC942DC0066067E /* ArticleRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleRepo.swift; sourceTree = "<group>"; };
+		45138D6E1AC944FF0066067E /* fugue.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = fugue.xcdatamodel; sourceTree = "<group>"; };
+		45138D701AC945660066067E /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		453BE2081AC15DE100D9DE4C /* fugue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fugue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		453BE20C1AC15DE100D9DE4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		453BE20D1AC15DE100D9DE4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +112,10 @@
 				45138D321AC915560066067E /* ArticleHeader.swift */,
 				45138D341AC91FB20066067E /* InfoQArticleResponseSerializer.swift */,
 				45138D361AC92F6E0066067E /* ArticleBody.swift */,
+				45138D381AC941160066067E /* ArticleListView.swift */,
+				45138D3A1AC942DC0066067E /* ArticleRepo.swift */,
+				45138D6D1AC944FF0066067E /* fugue.xcdatamodeld */,
+				45138D701AC945660066067E /* Article.swift */,
 			);
 			path = fugue;
 			sourceTree = "<group>";
@@ -289,8 +301,12 @@
 				45138D331AC915560066067E /* ArticleHeader.swift in Sources */,
 				453BE2101AC15DE100D9DE4C /* ViewController.swift in Sources */,
 				455DFF541AC29BD000235DE8 /* InfoQArticleListResponseSerializer.swift in Sources */,
+				45138D711AC945660066067E /* Article.swift in Sources */,
 				45138D371AC92F6E0066067E /* ArticleBody.swift in Sources */,
 				453BE20E1AC15DE100D9DE4C /* AppDelegate.swift in Sources */,
+				45138D6F1AC944FF0066067E /* fugue.xcdatamodeld in Sources */,
+				45138D3B1AC942DC0066067E /* ArticleRepo.swift in Sources */,
+				45138D391AC941160066067E /* ArticleListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +516,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		45138D6D1AC944FF0066067E /* fugue.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				45138D6E1AC944FF0066067E /* fugue.xcdatamodel */,
+			);
+			currentVersion = 45138D6E1AC944FF0066067E /* fugue.xcdatamodel */;
+			path = fugue.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 453BE2001AC15DE000D9DE4C /* Project object */;
 }

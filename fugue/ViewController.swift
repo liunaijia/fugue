@@ -10,12 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var articleList: ArticleListView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        loadSavedArticles()
+        
         let url = NSURL(string: "http://www.infoq.com/cn/news")
-        downloadArticles(url)
+        //downloadArticles(url)
+    }
+    
+    func loadSavedArticles() {
+        let repo = ArticleRepo()
+        let articles = repo.getAll()
+        articleList.articles = articles
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,9 +40,12 @@ class ViewController: UIViewController {
         manager.GET(articleListUrl?.absoluteString,
             parameters: nil,
             success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-                for article in responseObject as [ArticleHeader] {
-                    let articleUrl = NSURL(string: article.url!, relativeToURL: articleListUrl)
-                    self.downloadArticleBody(articleUrl)
+                for articleHeader in responseObject as [ArticleHeader] {
+                    let articleUrl = NSURL(string: articleHeader.url!, relativeToURL: articleListUrl)
+                    //self.downloadArticleBody(articleUrl)
+                    self.downloadArticleBody(articleUrl, success: { (articleBody) -> Void in
+                        self.saveArticle(articleHeader, articleBody: articleBody)
+                    })
                     break
                 }
             },
@@ -41,7 +54,7 @@ class ViewController: UIViewController {
         })
     }
     
-    func downloadArticleBody(articleUrl:NSURL?) {
+    func downloadArticleBody(articleUrl:NSURL?, success:(ArticleBody)->Void) {
         let manager = AFHTTPRequestOperationManager()
         manager.responseSerializer = InfoQArticleResponseSerializer()
         //manager.requestSerializer.setValue("text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8", forHTTPHeaderField: "Accept")
@@ -49,11 +62,16 @@ class ViewController: UIViewController {
             parameters: nil,
             success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
                 let articleBody = responseObject as ArticleBody
-                NSLog("\(articleBody)")
+                success(articleBody)
             },
             failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
                 NSLog(error.localizedDescription)
         })
+    }
+    
+    func saveArticle(articleHader: ArticleHeader, articleBody: ArticleBody) {
+        let repo = ArticleRepo()
+        repo.insert(articleHader, articleBody: articleBody)
     }
 }
 

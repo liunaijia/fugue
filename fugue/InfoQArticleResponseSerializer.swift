@@ -25,7 +25,8 @@ class InfoQArticleResponseSerializer : AFHTTPResponseSerializer {
     }
     
     func getAuthor(document: HTMLDocument) -> String {
-        return document.firstNodeMatchingSelector("p.heading_author").innerHTML
+        return document.firstNodeMatchingSelector("p.heading_author").textContent
+            .stringByReplacingOccurrencesOfString("\\s", withString: "", options: NSStringCompareOptions.RegularExpressionSearch)
     }
     
 }
