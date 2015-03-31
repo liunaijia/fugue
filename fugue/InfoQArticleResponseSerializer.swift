@@ -22,11 +22,13 @@ class InfoQArticleResponseSerializer : AFHTTPResponseSerializer {
     
     func getContent(document: HTMLDocument) -> String {
         return document.firstNodeMatchingSelector("div.news_item_content").innerHTML
+            .trim()
     }
     
     func getAuthor(document: HTMLDocument) -> String {
         return document.firstNodeMatchingSelector("p.heading_author").textContent
             .stringByReplacingOccurrencesOfString("\\s", withString: "", options: NSStringCompareOptions.RegularExpressionSearch)
+            .trim()
     }
     
 }

@@ -16,29 +16,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cvJ-yf-gLi" customClass="ArticleListView" customModule="fugue" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cvJ-yf-gLi" customClass="ArticleListView" customModule="fugue" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="article" textLabel="ZQp-CO-g3T" detailTextLabel="DhL-cH-xdm" style="IBUITableViewCellStyleSubtitle" id="6gI-qg-9QF">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="articleCell" id="6gI-qg-9QF" customClass="ArticleListViewCell" customModule="fugue" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6gI-qg-9QF" id="C1o-A8-JAh">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZQp-CO-g3T">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jau-XH-afQ">
+                                                    <rect key="frame" x="10" y="10" width="580" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DhL-cH-xdm">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Subtitle" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSl-Wb-mJn">
+                                                    <rect key="frame" x="10" y="29.5" width="580" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cSl-Wb-mJn" firstAttribute="top" secondItem="jau-XH-afQ" secondAttribute="bottom" id="G8e-J1-g7r"/>
+                                                <constraint firstItem="cSl-Wb-mJn" firstAttribute="trailing" secondItem="jau-XH-afQ" secondAttribute="trailing" id="H54-g7-bdn"/>
+                                                <constraint firstItem="jau-XH-afQ" firstAttribute="top" secondItem="C1o-A8-JAh" secondAttribute="top" constant="10" id="JYk-fe-gh6"/>
+                                                <constraint firstItem="jau-XH-afQ" firstAttribute="leading" secondItem="C1o-A8-JAh" secondAttribute="leading" constant="10" id="aie-6M-pmw"/>
+                                                <constraint firstAttribute="trailing" secondItem="jau-XH-afQ" secondAttribute="trailing" constant="10" id="eJe-xI-UUG"/>
+                                                <constraint firstItem="cSl-Wb-mJn" firstAttribute="leading" secondItem="jau-XH-afQ" secondAttribute="leading" id="vch-fi-rxP"/>
+                                                <constraint firstAttribute="bottom" secondItem="cSl-Wb-mJn" secondAttribute="bottom" constant="10" id="x8o-ks-Mpl"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="subTitleLabel" destination="cSl-Wb-mJn" id="hS5-cz-szc"/>
+                                            <outlet property="titleLabel" destination="jau-XH-afQ" id="Zmo-uC-Us8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

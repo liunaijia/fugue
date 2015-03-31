@@ -14,6 +14,8 @@ class ArticleListView: UITableView, UITableViewDataSource {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.dataSource = self
+        self.rowHeight = UITableViewAutomaticDimension
+        self.estimatedRowHeight = 80
     }
     
 //    override func numberOfSections() -> Int {
@@ -25,11 +27,11 @@ class ArticleListView: UITableView, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = self.dequeueReusableCellWithIdentifier("article") as UITableViewCell
-        let article = articles?[indexPath.row]
-        cell.textLabel?.text = article?.title
-        cell.detailTextLabel?.text = article?.summary
+        let cell = self.dequeueReusableCellWithIdentifier("articleCell") as ArticleListViewCell
+        cell.set(articles?[indexPath.row])
         return cell
     }
+    
+    
     
 }

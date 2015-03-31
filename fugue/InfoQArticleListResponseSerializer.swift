@@ -22,7 +22,6 @@ class InfoQArticleListResponseSerializer : AFHTTPResponseSerializer {
             article.title = getArticleTitle(articleLinkNode)
             article.url = getArticleUrl(articleLinkNode)
             article.summary = getArticleSummary(articleSummaryNode)
-
             articles.append(article)
         }
         
@@ -30,14 +29,14 @@ class InfoQArticleListResponseSerializer : AFHTTPResponseSerializer {
     }
     
     func getArticleTitle(articleLinkNode:HTMLElement) -> String? {
-        return split(articleLinkNode.textContent) {$0 == "\n"}.first
+        return (split(articleLinkNode.textContent) {$0 == "\n"}.first)?.trim()
     }
     
     func getArticleUrl(articleLinkNode:HTMLElement) -> String {
-        return articleLinkNode.objectForKeyedSubscript("href") as String
+        return (articleLinkNode.objectForKeyedSubscript("href") as String).trim()
     }
     
     func getArticleSummary(articleSummaryNode:HTMLElement) -> String {
-        return articleSummaryNode.textContent
+        return articleSummaryNode.textContent.trim()
     }
 }

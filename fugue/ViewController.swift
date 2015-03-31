@@ -46,7 +46,6 @@ class ViewController: UIViewController {
                     self.downloadArticleBody(articleUrl, success: { (articleBody) -> Void in
                         self.saveArticle(articleHeader, articleBody: articleBody)
                     })
-                    break
                 }
             },
             failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
@@ -70,6 +69,7 @@ class ViewController: UIViewController {
     }
     
     func saveArticle(articleHader: ArticleHeader, articleBody: ArticleBody) {
+        NSLog("Saving \(articleHader.title)")
         let repo = ArticleRepo()
         repo.insert(articleHader, articleBody: articleBody)
     }

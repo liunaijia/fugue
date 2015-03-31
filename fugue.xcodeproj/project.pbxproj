@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3485C52BBCA62BEBD0080F60 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B311243AABB172125F6BD43 /* libPods.a */; };
 		45138D331AC915560066067E /* ArticleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45138D321AC915560066067E /* ArticleHeader.swift */; };
 		45138D351AC91FB20066067E /* InfoQArticleResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45138D341AC91FB20066067E /* InfoQArticleResponseSerializer.swift */; };
 		45138D371AC92F6E0066067E /* ArticleBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45138D361AC92F6E0066067E /* ArticleBody.swift */; };
@@ -14,6 +15,8 @@
 		45138D3B1AC942DC0066067E /* ArticleRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45138D3A1AC942DC0066067E /* ArticleRepo.swift */; };
 		45138D6F1AC944FF0066067E /* fugue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45138D6D1AC944FF0066067E /* fugue.xcdatamodeld */; };
 		45138D711AC945660066067E /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45138D701AC945660066067E /* Article.swift */; };
+		45138D751ACA50EE0066067E /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45138D741ACA50EE0066067E /* Extension.swift */; };
+		45138D771ACA6F710066067E /* ArticleListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45138D761ACA6F710066067E /* ArticleListViewCell.swift */; };
 		453BE20E1AC15DE100D9DE4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453BE20D1AC15DE100D9DE4C /* AppDelegate.swift */; };
 		453BE2101AC15DE100D9DE4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453BE20F1AC15DE100D9DE4C /* ViewController.swift */; };
 		453BE2131AC15DE100D9DE4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 453BE2111AC15DE100D9DE4C /* Main.storyboard */; };
@@ -21,7 +24,6 @@
 		453BE2181AC15DE100D9DE4C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 453BE2161AC15DE100D9DE4C /* LaunchScreen.xib */; };
 		453BE2241AC15DE100D9DE4C /* fugueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453BE2231AC15DE100D9DE4C /* fugueTests.swift */; };
 		455DFF541AC29BD000235DE8 /* InfoQArticleListResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455DFF531AC29BD000235DE8 /* InfoQArticleListResponseSerializer.swift */; };
-		A3007FDE2B9010A14D5214ED /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5F1FD89D87BD9675836012 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		45138D3A1AC942DC0066067E /* ArticleRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleRepo.swift; sourceTree = "<group>"; };
 		45138D6E1AC944FF0066067E /* fugue.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = fugue.xcdatamodel; sourceTree = "<group>"; };
 		45138D701AC945660066067E /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		45138D741ACA50EE0066067E /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		45138D761ACA6F710066067E /* ArticleListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleListViewCell.swift; sourceTree = "<group>"; };
 		453BE2081AC15DE100D9DE4C /* fugue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fugue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		453BE20C1AC15DE100D9DE4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		453BE20D1AC15DE100D9DE4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +59,7 @@
 		453BE2231AC15DE100D9DE4C /* fugueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fugueTests.swift; sourceTree = "<group>"; };
 		455DFF521AC2549F00235DE8 /* Fugue-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fugue-Bridging-Header.h"; sourceTree = "<group>"; };
 		455DFF531AC29BD000235DE8 /* InfoQArticleListResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoQArticleListResponseSerializer.swift; sourceTree = "<group>"; };
-		7B5F1FD89D87BD9675836012 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B311243AABB172125F6BD43 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD00159F530A76DD5005E93 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3007FDE2B9010A14D5214ED /* libPods.a in Frameworks */,
+				3485C52BBCA62BEBD0080F60 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +120,8 @@
 				45138D3A1AC942DC0066067E /* ArticleRepo.swift */,
 				45138D6D1AC944FF0066067E /* fugue.xcdatamodeld */,
 				45138D701AC945660066067E /* Article.swift */,
+				45138D741ACA50EE0066067E /* Extension.swift */,
+				45138D761ACA6F710066067E /* ArticleListViewCell.swift */,
 			);
 			path = fugue;
 			sourceTree = "<group>";
@@ -148,7 +154,7 @@
 		5A21AE62A1C57DD760C75CA5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7B5F1FD89D87BD9675836012 /* libPods.a */,
+				4B311243AABB172125F6BD43 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -301,12 +307,14 @@
 				45138D331AC915560066067E /* ArticleHeader.swift in Sources */,
 				453BE2101AC15DE100D9DE4C /* ViewController.swift in Sources */,
 				455DFF541AC29BD000235DE8 /* InfoQArticleListResponseSerializer.swift in Sources */,
+				45138D751ACA50EE0066067E /* Extension.swift in Sources */,
 				45138D711AC945660066067E /* Article.swift in Sources */,
 				45138D371AC92F6E0066067E /* ArticleBody.swift in Sources */,
 				453BE20E1AC15DE100D9DE4C /* AppDelegate.swift in Sources */,
 				45138D6F1AC944FF0066067E /* fugue.xcdatamodeld in Sources */,
 				45138D3B1AC942DC0066067E /* ArticleRepo.swift in Sources */,
 				45138D391AC941160066067E /* ArticleListView.swift in Sources */,
+				45138D771ACA6F710066067E /* ArticleListViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
