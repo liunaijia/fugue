@@ -21,14 +21,26 @@ class InfoQArticleResponseSerializer : AFHTTPResponseSerializer {
     }
     
     func getContent(document: HTMLDocument) -> String {
-        return document.firstNodeMatchingSelector("div.news_item_content").innerHTML
-            .trim()
+        let html = document.firstNodeMatchingSelector("div.news_item_content").innerHTML
+        return encodeImage(html).trim()
     }
     
     func getAuthor(document: HTMLDocument) -> String {
         return document.firstNodeMatchingSelector("p.heading_author").textContent
             .stringByReplacingOccurrencesOfString("\\s", withString: "", options: NSStringCompareOptions.RegularExpressionSearch)
             .trim()
+    }
+    
+    func encodeImage(html: String) -> String {
+        println(html)
+        let pattern = "<img\\s+.*?src=\"(.*?)\".*?>"
+        let regex = Regex(pattern)
+        for m in regex.matches(html) {
+            let range = m.rangeAtIndex(0)
+            let img = (html as NSString).substringWithRange(range)
+            println("\(img)")
+        }
+        return html
     }
     
 }

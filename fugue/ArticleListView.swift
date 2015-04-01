@@ -32,6 +32,11 @@ class ArticleListView: UITableView, UITableViewDataSource {
         return cell
     }
     
-    
+    func getSelectedArticle() -> Article? {
+        if let index = self.indexPathForSelectedRow()?.row {
+            return self.articles?[index]
+        }
+        return nil
+    }
     
 }

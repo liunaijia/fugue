@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ArticleListController: UIViewController {
 
     @IBOutlet weak var articleList: ArticleListView!
     
@@ -16,10 +16,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        loadSavedArticles()
+        //loadSavedArticles()
         
         let url = NSURL(string: "http://www.infoq.com/cn/news")
         //downloadArticles(url)
+        
+        let img = HTMLElement(tagName: "img", attributes: ["src": "updog.png"])
+        println(img.serializedFragment)
+        return
+        
+//        let x = NSURL(string: "http://www.infoq.com/cn/news/2015/03/apache-kafka-stream-data-advice")
+//        self.downloadArticleBody(x, success: { (articleBody) -> Void in
+//            //self.saveArticle(articleHeader, articleBody: articleBody)
+//        })
+
     }
     
     func loadSavedArticles() {
@@ -72,6 +82,12 @@ class ViewController: UIViewController {
         NSLog("Saving \(articleHader.title)")
         let repo = ArticleRepo()
         repo.insert(articleHader, articleBody: articleBody)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let articleController = segue.destinationViewController as? ArticleController {
+            articleController.article = articleList.getSelectedArticle()
+        }
     }
 }
 

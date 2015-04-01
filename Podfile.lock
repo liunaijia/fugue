@@ -24,7 +24,16 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - HTMLReader
+  - HTMLReader (from `https://github.com/liunaijia/HTMLReader.git`)
+
+EXTERNAL SOURCES:
+  HTMLReader:
+    :git: https://github.com/liunaijia/HTMLReader.git
+
+CHECKOUT OPTIONS:
+  HTMLReader:
+    :commit: 8432b9f69cecbc768c325957bfbad94ed1ad656c
+    :git: https://github.com/liunaijia/HTMLReader.git
 
 SPEC CHECKSUMS:
   AFNetworking: fefbce9660acb17f48ae0011292d4da0f457bf36
