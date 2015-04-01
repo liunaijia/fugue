@@ -32,17 +32,31 @@ class InfoQArticleResponseSerializer : AFHTTPResponseSerializer {
     }
     
     func encodeImage(html: String) -> String {
-        println(html)
+        var encodedHtml = html
         let pattern = "<img\\s+.*?src=\"(.*?)\".*?/>"
         let regex = Regex(pattern)
-        for m in regex.matches(html) {
+        for m in regex.matches(html).reverse() {
             let imgRange = m.rangeAtIndex(0)
             let imgUrlRange = m.rangeAtIndex(1)
 
-            let img = (html as NSString).substringWithRange(imgRange)
-            println("\(img)")
+            let imgUrl = (html as NSString).substringWithRange(imgUrlRange)
+            let imgFragment = createImageFragment(imgUrl)
+            
+            encodedHtml = (encodedHtml as NSString).stringByReplacingCharactersInRange(imgRange, withString: imgFragment)
         }
-        return html
+        //print(encodedHtml)
+        return encodedHtml
     }
     
+    func createImageFragment(url: String) -> String {
+        //let data = NSData(contentsOfURL: url!, options: nil, error: nil)
+        let request = NSURLRequest(URL: NSURL(string: url)!)
+        var response: NSURLResponse?
+        let data = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: nil)?
+            .base64EncodedStringWithOptions(.allZeros)
+        let httpResponse = response as? NSHTTPURLResponse
+        let contentType = httpResponse?.allHeaderFields["Content-Type"] as? String
+        // data:image/png;base64,iVBOR...
+        return "<img src=\"data:\(contentType!);base64,\(data!)\" />"
+    }
 }

@@ -16,16 +16,21 @@ class ArticleListController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-//        loadSavedArticles()
+        loadSavedArticles()
         
-        //let url = NSURL(string: "http://www.infoq.com/cn/news")
+        let url = NSURL(string: "http://www.infoq.com/cn/news")
         //downloadArticles(url)
+        
+        //let url = NSURL(string: "https://avatars3.githubusercontent.com/u/3588994?v=3&s=96")
+        //let data = NSData(contentsOfURL: url!, options: nil, error: nil)
+        return
+        
         
         let x = NSURL(string: "http://www.infoq.com/cn/news/2015/03/apache-kafka-stream-data-advice")
         HttpClient.get(x!, parameters: nil, responseSerializer: InfoQArticleResponseSerializer())
         {
             (articleBody: ArticleBody) -> Void in
-            println(articleBody.author)
+            //println(articleBody.content)
         }
 
     }
