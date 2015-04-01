@@ -33,11 +33,13 @@ class InfoQArticleResponseSerializer : AFHTTPResponseSerializer {
     
     func encodeImage(html: String) -> String {
         println(html)
-        let pattern = "<img\\s+.*?src=\"(.*?)\".*?>"
+        let pattern = "<img\\s+.*?src=\"(.*?)\".*?/>"
         let regex = Regex(pattern)
         for m in regex.matches(html) {
-            let range = m.rangeAtIndex(0)
-            let img = (html as NSString).substringWithRange(range)
+            let imgRange = m.rangeAtIndex(0)
+            let imgUrlRange = m.rangeAtIndex(1)
+
+            let img = (html as NSString).substringWithRange(imgRange)
             println("\(img)")
         }
         return html

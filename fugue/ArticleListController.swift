@@ -16,19 +16,17 @@ class ArticleListController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //loadSavedArticles()
+//        loadSavedArticles()
         
-        let url = NSURL(string: "http://www.infoq.com/cn/news")
+        //let url = NSURL(string: "http://www.infoq.com/cn/news")
         //downloadArticles(url)
         
-        let img = HTMLElement(tagName: "img", attributes: ["src": "updog.png"])
-        println(img.serializedFragment)
-        return
-        
-//        let x = NSURL(string: "http://www.infoq.com/cn/news/2015/03/apache-kafka-stream-data-advice")
-//        self.downloadArticleBody(x, success: { (articleBody) -> Void in
-//            //self.saveArticle(articleHeader, articleBody: articleBody)
-//        })
+        let x = NSURL(string: "http://www.infoq.com/cn/news/2015/03/apache-kafka-stream-data-advice")
+        HttpClient.get(x!, parameters: nil, responseSerializer: InfoQArticleResponseSerializer())
+        {
+            (articleBody: ArticleBody) -> Void in
+            println(articleBody.author)
+        }
 
     }
     
@@ -38,45 +36,19 @@ class ArticleListController: UIViewController {
         articleList.articles = articles
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     func downloadArticles(articleListUrl: NSURL?) {
-        let manager = AFHTTPRequestOperationManager()
-        manager.responseSerializer = InfoQArticleListResponseSerializer()
-        //manager.requestSerializer.setValue("text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8", forHTTPHeaderField: "Accept")
-        manager.GET(articleListUrl?.absoluteString,
-            parameters: nil,
-            success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-                for articleHeader in responseObject as [ArticleHeader] {
-                    let articleUrl = NSURL(string: articleHeader.url!, relativeToURL: articleListUrl)
-                    //self.downloadArticleBody(articleUrl)
-                    self.downloadArticleBody(articleUrl, success: { (articleBody) -> Void in
-                        self.saveArticle(articleHeader, articleBody: articleBody)
-                    })
+        HttpClient.get(articleListUrl!, parameters: nil, responseSerializer: InfoQArticleListResponseSerializer()) {
+            (articleHeaders: [ArticleHeader]) -> Void in
+            for articleHeader in articleHeaders {
+                if let articleUrl = NSURL(string: articleHeader.url!, relativeToURL: articleListUrl) {
+                    // download article
+                    HttpClient.get(articleUrl, parameters: nil, responseSerializer: InfoQArticleResponseSerializer())
+                        {self.saveArticle(articleHeader, articleBody: $0)}
                 }
-            },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
-                NSLog(error.localizedDescription)
-        })
+            }
+        }
     }
     
-    func downloadArticleBody(articleUrl:NSURL?, success:(ArticleBody)->Void) {
-        let manager = AFHTTPRequestOperationManager()
-        manager.responseSerializer = InfoQArticleResponseSerializer()
-        //manager.requestSerializer.setValue("text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8", forHTTPHeaderField: "Accept")
-        manager.GET(articleUrl?.absoluteString,
-            parameters: nil,
-            success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-                let articleBody = responseObject as ArticleBody
-                success(articleBody)
-            },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
-                NSLog(error.localizedDescription)
-        })
-    }
     
     func saveArticle(articleHader: ArticleHeader, articleBody: ArticleBody) {
         NSLog("Saving \(articleHader.title)")

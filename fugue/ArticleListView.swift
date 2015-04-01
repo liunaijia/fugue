@@ -18,10 +18,6 @@ class ArticleListView: UITableView, UITableViewDataSource {
         self.estimatedRowHeight = 80
     }
     
-//    override func numberOfSections() -> Int {
-//        return 1
-//    }
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articles != nil ? articles!.count : 0
     }

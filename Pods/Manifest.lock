@@ -32,7 +32,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   HTMLReader:
-    :commit: 8432b9f69cecbc768c325957bfbad94ed1ad656c
+    :commit: 71c8d76e0556f81c883c4d1c5dda74ebebc98355
     :git: https://github.com/liunaijia/HTMLReader.git
 
 SPEC CHECKSUMS:
