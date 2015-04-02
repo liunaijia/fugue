@@ -82,7 +82,16 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" id="xeE-gd-vYa"/>
+                    <navigationItem key="navigationItem" id="xeE-gd-vYa">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="2Pt-96-44P">
+                            <connections>
+                                <action selector="tapTrashButtonItem:" destination="POc-qT-rnA" id="PP3-Qm-cXO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="no0-bj-3Ug">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I1B-KJ-eA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

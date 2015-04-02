@@ -37,4 +37,13 @@ class ArticleRepo {
 //            println("Could not fetch \(error), \(error!.userInfo)")
 //        }
     }
+    
+    func deleteAll() {
+        if let articles = getAll() {
+            for article in articles {
+                managedObjectContext.deleteObject(article)
+            }
+            managedObjectContext.save(nil)
+        }
+    }
 }
