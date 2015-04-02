@@ -40,23 +40,28 @@ class InfoQArticleResponseSerializer : AFHTTPResponseSerializer {
             let imgUrlRange = m.rangeAtIndex(1)
 
             let imgUrl = (html as NSString).substringWithRange(imgUrlRange)
-            let imgFragment = createImageFragment(imgUrl)
-            
-            encodedHtml = (encodedHtml as NSString).stringByReplacingCharactersInRange(imgRange, withString: imgFragment)
+            if let imgFragment = createImageHtmlFragment(imgUrl) {
+                encodedHtml = (encodedHtml as NSString).stringByReplacingCharactersInRange(imgRange, withString: imgFragment)
+            }
         }
         //print(encodedHtml)
         return encodedHtml
     }
     
-    func createImageFragment(url: String) -> String {
+    func createImageHtmlFragment(urlString: String) -> String? {
         //let data = NSData(contentsOfURL: url!, options: nil, error: nil)
-        let request = NSURLRequest(URL: NSURL(string: url)!)
-        var response: NSURLResponse?
-        let data = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: nil)?
-            .base64EncodedStringWithOptions(.allZeros)
-        let httpResponse = response as? NSHTTPURLResponse
-        let contentType = httpResponse?.allHeaderFields["Content-Type"] as? String
-        // data:image/png;base64,iVBOR...
-        return "<img src=\"data:\(contentType!);base64,\(data!)\" />"
+        if let url = NSURL(string: urlString) {
+            let request = NSURLRequest(URL: url)
+            var response: NSURLResponse?
+            if let data = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: nil) {
+                let encodedData = data.base64EncodedStringWithOptions(.allZeros)
+                if let contentType = response?.contentType {
+                    // data:image/png;base64,iVBOR...
+                    return "<img src=\"data:\(contentType);base64,\(encodedData)\" />"
+                }
+            }
+        }
+        
+        return nil
     }
 }

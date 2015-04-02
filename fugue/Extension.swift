@@ -14,3 +14,14 @@ extension String {
     }
 }
 
+extension NSURLResponse {
+    var contentType: String? {
+        get{
+            if let httpResponse = self as? NSHTTPURLResponse {
+                let contentType = httpResponse.allHeaderFields["Content-Type"] as? String
+                return contentType
+            }
+            return nil
+        }
+    }
+}

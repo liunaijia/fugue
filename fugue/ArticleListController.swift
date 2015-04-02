@@ -63,7 +63,7 @@ class ArticleListController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let articleController = segue.destinationViewController as? ArticleController {
-            articleController.article = articleList.getSelectedArticle()
+            articleController.article = articleList.selectedArticle
         }
     }
 }
