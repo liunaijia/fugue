@@ -15,15 +15,13 @@ class ArticleRepo {
         return appDelegate.managedObjectContext!
     }()
     
-    func insert(articleHeader: ArticleHeader, articleBody: ArticleBody) {
+    func insert(articleHeader: ArticleHeader, articleBody: ArticleBody) -> Article {
         let article = NSEntityDescription.insertNewObjectForEntityForName("Article", inManagedObjectContext: self.managedObjectContext) as Article
         article.set(articleHeader, articleBody: articleBody)
         
-        // commit your changes to person and save to disk by calling save on the managed object context.
-        var error: NSError?
-        if !managedObjectContext.save(&error) {
-            println("Could not save \(error), \(error?.userInfo)")
-        }
+        managedObjectContext.save()
+        
+        return article
     }
     
     func getAll() -> [Article]? {
@@ -43,7 +41,7 @@ class ArticleRepo {
             for article in articles {
                 managedObjectContext.deleteObject(article)
             }
-            managedObjectContext.save(nil)
+            managedObjectContext.save()
         }
     }
 }

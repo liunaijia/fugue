@@ -54,33 +54,34 @@ class ArticleListController: UITableViewController {
     {
         let url = NSURL(string: "http://www.infoq.com/cn/news")
         downloadArticles(url) {
+            (newArticle, allDone) -> Void in
+            self.articleList.articles?.insert(newArticle, atIndex: 0)
             self.tableView.reloadData()
-            self.refreshControl?.endRefreshing()
+            if allDone {
+                self.refreshControl?.endRefreshing()
+            }
         }
     }
     
 
-    func downloadArticles(articleListUrl: NSURL?, success:()->Void) {
+    func downloadArticles(articleListUrl: NSURL?, gotNewArticle:(Article, Bool)->Void) {
         HttpClient.get(articleListUrl!, parameters: nil, responseSerializer: InfoQArticleListResponseSerializer()) {
             (articleHeaders: [ArticleHeader]) -> Void in
+            var articleCount = 0
             for articleHeader in articleHeaders {
                 if let articleUrl = NSURL(string: articleHeader.url!, relativeToURL: articleListUrl) {
                     // download article
                     HttpClient.get(articleUrl, parameters: nil, responseSerializer: InfoQArticleResponseSerializer()) {
                         (articleBody: ArticleBody) -> Void in
-                        self.saveArticle(articleHeader, articleBody: articleBody)
-                        success()
+                        let repo = ArticleRepo()
+                        let newArticle = repo.insert(articleHeader, articleBody: articleBody)
+                        
+                        let allDone = ++articleCount == articleHeaders.count
+                        gotNewArticle(newArticle, allDone)
                     }
                 }
             }
         }
-    }
-    
-    
-    func saveArticle(articleHader: ArticleHeader, articleBody: ArticleBody) {
-        NSLog("Saving \(articleHader.title)")
-        let repo = ArticleRepo()
-        repo.insert(articleHader, articleBody: articleBody)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 extension String {
     func trim() -> String {
@@ -22,6 +23,15 @@ extension NSURLResponse {
                 return contentType
             }
             return nil
+        }
+    }
+}
+
+extension NSManagedObjectContext {
+    func save() {
+        var error: NSError?
+        if !self.save(&error) {
+            NSLog("Could not save \(error), \(error?.userInfo)")
         }
     }
 }
