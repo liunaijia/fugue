@@ -8,10 +8,14 @@
 
 import UIKit
 
-class ArticleListController: UITableViewController, UITableViewDataSource {
-
-    //@IBOutlet weak var articleList: ArticleListView!
+class ArticleListController: UITableViewController {
     var articles: [Article]?
+    
+    var articleList: ArticleListView {
+        get{
+            return tableView as ArticleListView
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +27,7 @@ class ArticleListController: UITableViewController, UITableViewDataSource {
 
         
         let repo = ArticleRepo()
-        self.articles = repo.getAll()
+        articleList.articles = repo.getAll()
         
         //loadSavedArticles()
         
@@ -44,15 +48,15 @@ class ArticleListController: UITableViewController, UITableViewDataSource {
 
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articles != nil ? articles!.count : 0
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("articleCell") as ArticleListViewCell
-        cell.set(articles?[indexPath.row])
-        return cell
-    }
+//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return articles != nil ? articles!.count : 0
+//    }
+//    
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCellWithIdentifier("articleCell") as ArticleListViewCell
+//        cell.set(articles?[indexPath.row])
+//        return cell
+//    }
     
 
     func downloadArticles(articleListUrl: NSURL?) {
@@ -77,10 +81,7 @@ class ArticleListController: UITableViewController, UITableViewDataSource {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let articleController = segue.destinationViewController as? ArticleController {
-            if let index = tableView.indexPathForSelectedRow()?.row {
-                let selectedArticle = articles?[index]
-                articleController.article = selectedArticle
-            }
+            articleController.article = articleList.selectedArticle
         }
     }
 }

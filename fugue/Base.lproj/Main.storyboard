@@ -41,7 +41,7 @@
         <scene sceneID="ghG-oj-Vmp">
             <objects>
                 <tableViewController id="POc-qT-rnA" customClass="ArticleListController" customModule="fugue" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="ixm-PQ-SOP">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="ixm-PQ-SOP" customClass="ArticleListView" customModule="fugue" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -81,10 +81,6 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="POc-qT-rnA" id="fOp-Dt-Jex"/>
-                            <outlet property="delegate" destination="POc-qT-rnA" id="TUG-Lx-4uE"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="xeE-gd-vYa"/>
                 </tableViewController>
