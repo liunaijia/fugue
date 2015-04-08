@@ -15,6 +15,6 @@ class ArticleListViewCell : UITableViewCell {
     
     func set(article:Article?) {
         titleLabel.text = article?.title
-        subTitleLabel.text = article?.summary
+        subTitleLabel.text = article?.author
     }
 }
