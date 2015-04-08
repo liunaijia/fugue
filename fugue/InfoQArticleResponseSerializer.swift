@@ -21,8 +21,10 @@ class InfoQArticleResponseSerializer : AFHTTPResponseSerializer {
     }
     
     func getContent(document: HTMLDocument) -> String {
-        let html = document.firstNodeMatchingSelector("div.news_item_content").innerHTML
-        return encodeImage(html).trim()
+        let contentElement = document.firstNodeMatchingSelector("div.news_item_content")
+        encodeImage(contentElement)
+        //println(contentElement.innerHTML)
+        return contentElement.innerHTML
     }
     
     func getAuthor(document: HTMLDocument) -> String {
@@ -31,24 +33,15 @@ class InfoQArticleResponseSerializer : AFHTTPResponseSerializer {
             .trim()
     }
     
-    func encodeImage(html: String) -> String {
-        var encodedHtml = html
-        let pattern = "<img\\s+.*?src=\"(.*?)\".*?/>"
-        let regex = Regex(pattern)
-        for m in regex.matches(html).reverse() {
-            let imgRange = m.rangeAtIndex(0)
-            let imgUrlRange = m.rangeAtIndex(1)
-
-            let imgUrl = (html as NSString).substringWithRange(imgUrlRange)
-            if let imgFragment = createImageHtmlFragment(imgUrl) {
-                encodedHtml = (encodedHtml as NSString).stringByReplacingCharactersInRange(imgRange, withString: imgFragment)
-            }
+    func encodeImage(contentElement: HTMLElement) {
+        for imgNode in contentElement.nodesMatchingSelector("img") as [HTMLElement] {
+            let imgUrl = imgNode.objectForKeyedSubscript("src") as String
+            let srcValue = createDataValue(imgUrl)
+            imgNode.setObject(srcValue, forKeyedSubscript: "src")
         }
-        //print(encodedHtml)
-        return encodedHtml
     }
     
-    func createImageHtmlFragment(urlString: String) -> String? {
+    func createDataValue(urlString: String) -> String? {
         //let data = NSData(contentsOfURL: url!, options: nil, error: nil)
         if let url = NSURL(string: urlString) {
             let request = NSURLRequest(URL: url)
@@ -57,7 +50,7 @@ class InfoQArticleResponseSerializer : AFHTTPResponseSerializer {
                 let encodedData = data.base64EncodedStringWithOptions(.allZeros)
                 if let contentType = response?.contentType {
                     // data:image/png;base64,iVBOR...
-                    return "<img src=\"data:\(contentType);base64,\(encodedData)\" />"
+                    return "data:\(contentType);base64,\(encodedData)"
                 }
             }
         }
