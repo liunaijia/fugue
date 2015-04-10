@@ -15,9 +15,9 @@ class ArticleRepo {
         return appDelegate.managedObjectContext!
     }()
     
-    func insert(articleHeader: ArticleHeader, articleBody: ArticleBody) -> Article {
+    func insert(#header: ArticleHeader, body: ArticleBody) -> Article {
         let article = NSEntityDescription.insertNewObjectForEntityForName("Article", inManagedObjectContext: self.managedObjectContext) as Article
-        article.set(articleHeader, articleBody: articleBody)
+        article.set(header: header, body: body)
         
         managedObjectContext.save()
         

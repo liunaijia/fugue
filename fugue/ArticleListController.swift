@@ -52,8 +52,7 @@ class ArticleListController: UITableViewController {
     
     func refresh(sender:AnyObject)
     {
-        let url = NSURL(string: "http://www.infoq.com/cn/news")
-        downloadArticles(url) {
+        downloadArticles() {
             (newArticle, allDone) -> Void in
             self.articleList.articles?.insert(newArticle, atIndex: 0)
             self.tableView.reloadData()
@@ -64,21 +63,22 @@ class ArticleListController: UITableViewController {
     }
     
 
-    func downloadArticles(articleListUrl: NSURL?, gotNewArticle:(Article, Bool)->Void) {
-        HttpClient.get(articleListUrl!, parameters: nil, responseSerializer: InfoQArticleListResponseSerializer()) {
-            (articleHeaders: [ArticleHeader]) -> Void in
+    func downloadArticles(gotNewArticle:(Article, Bool)->Void) {
+        let section = "news"
+        let start = 0
+        let datasource = InfoQDataSource()
+        datasource.getList(section: section, start: start) {
+            (headers: [ArticleHeader]) -> Void in
             var articleCount = 0
-            for articleHeader in articleHeaders {
-                if let articleUrl = NSURL(string: articleHeader.url!, relativeToURL: articleListUrl) {
-                    // download article
-                    HttpClient.get(articleUrl, parameters: nil, responseSerializer: InfoQArticleResponseSerializer()) {
-                        (articleBody: ArticleBody) -> Void in
+            for header in headers {
+                if let url = header.url {
+                    datasource.getDetails(url, done: { (body: ArticleBody) -> Void in
                         let repo = ArticleRepo()
-                        let newArticle = repo.insert(articleHeader, articleBody: articleBody)
+                        let newArticle = repo.insert(header: header, body: body)
                         
-                        let allDone = ++articleCount == articleHeaders.count
+                        let allDone = ++articleCount == headers.count
                         gotNewArticle(newArticle, allDone)
-                    }
+                    })
                 }
             }
         }

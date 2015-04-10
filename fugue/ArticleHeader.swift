@@ -12,4 +12,6 @@ class ArticleHeader : NSObject {
     var title: String?
     var summary: String?
     var url: String?
+    var author: String?
+    var publishAt: NSDate?
 }

@@ -20,6 +20,7 @@
 		45138D791ACA83DF0066067E /* ArticleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45138D781ACA83DF0066067E /* ArticleController.swift */; };
 		45138D801ACA92680066067E /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45138D7F1ACA92680066067E /* Regex.swift */; };
 		45138D821ACBA1B40066067E /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45138D811ACBA1B40066067E /* HttpClient.swift */; };
+		45138D871AD51AA50066067E /* InfoQDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45138D861AD51AA50066067E /* InfoQDataSource.swift */; };
 		453BE20E1AC15DE100D9DE4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453BE20D1AC15DE100D9DE4C /* AppDelegate.swift */; };
 		453BE2101AC15DE100D9DE4C /* ArticleListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453BE20F1AC15DE100D9DE4C /* ArticleListController.swift */; };
 		453BE2131AC15DE100D9DE4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 453BE2111AC15DE100D9DE4C /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		45138D781ACA83DF0066067E /* ArticleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleController.swift; sourceTree = "<group>"; };
 		45138D7F1ACA92680066067E /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		45138D811ACBA1B40066067E /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		45138D861AD51AA50066067E /* InfoQDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoQDataSource.swift; sourceTree = "<group>"; };
 		453BE2081AC15DE100D9DE4C /* fugue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fugue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		453BE20C1AC15DE100D9DE4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		453BE20D1AC15DE100D9DE4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,14 @@
 			name = Util;
 			sourceTree = "<group>";
 		};
+		45138D851AD51A8D0066067E /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				45138D861AD51AA50066067E /* InfoQDataSource.swift */,
+			);
+			name = DataSources;
+			sourceTree = "<group>";
+		};
 		453BE1FF1AC15DE000D9DE4C = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +168,7 @@
 		453BE20A1AC15DE100D9DE4C /* fugue */ = {
 			isa = PBXGroup;
 			children = (
+				45138D851AD51A8D0066067E /* DataSources */,
 				45138D7A1ACA85300066067E /* Controllers */,
 				45138D7C1ACA85900066067E /* Views */,
 				45138D7B1ACA85570066067E /* Parser */,
@@ -360,6 +371,7 @@
 				455DFF541AC29BD000235DE8 /* InfoQArticleListResponseSerializer.swift in Sources */,
 				45138D751ACA50EE0066067E /* Extension.swift in Sources */,
 				45138D711AC945660066067E /* Article.swift in Sources */,
+				45138D871AD51AA50066067E /* InfoQDataSource.swift in Sources */,
 				45138D371AC92F6E0066067E /* ArticleBody.swift in Sources */,
 				453BE20E1AC15DE100D9DE4C /* AppDelegate.swift in Sources */,
 				45138D821ACBA1B40066067E /* HttpClient.swift in Sources */,

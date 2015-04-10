@@ -17,12 +17,12 @@ class Article: NSManagedObject {
     @NSManaged var summary: String?
     @NSManaged var content: String?
     
-    func set(articleHeader: ArticleHeader, articleBody: ArticleBody) {
-        self.title = articleHeader.title
-        self.url = articleHeader.url
-        self.summary = articleHeader.summary
-        self.author = articleBody.author
-        self.content = articleBody.content
+    func set(#header: ArticleHeader, body: ArticleBody) {
+        self.title = header.title
+        self.url = header.url
+        self.summary = header.summary
+        self.author = header.author
+        self.content = body.content
     }
 
 //    override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {

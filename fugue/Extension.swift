@@ -35,3 +35,25 @@ extension NSManagedObjectContext {
         }
     }
 }
+
+extension NSDate {
+    
+    /// Returns a new Date given the year month and day
+    ///
+    /// :param year
+    /// :param month
+    /// :param day
+    /// :return Date
+    public class func from(#year: Int, month: Int, day: Int) -> NSDate? {
+        var c = NSDateComponents()
+        c.year = year
+        c.month = month
+        c.day = day
+        
+        if let gregorian = NSCalendar(identifier:NSGregorianCalendar) {
+            return gregorian.dateFromComponents(c)
+        } else {
+            return .None
+        }
+    }
+}
