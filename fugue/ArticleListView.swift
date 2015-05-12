@@ -23,7 +23,7 @@ class ArticleListView: UITableView, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.dequeueReusableCellWithIdentifier("articleCell") as ArticleListViewCell
+        let cell = self.dequeueReusableCellWithIdentifier("articleCell") as! ArticleListViewCell
         cell.set(articles?[indexPath.row])
         return cell
     }

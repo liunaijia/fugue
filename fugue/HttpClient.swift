@@ -17,7 +17,7 @@ class HttpClient : NSObject{
         manager.GET(url.absoluteString,
             parameters: parameters,
             success: { (operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-                success(responseObject as T)
+                success(responseObject as! T)
             },
             failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
                 NSLog(error.localizedDescription)

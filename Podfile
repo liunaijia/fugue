@@ -3,7 +3,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 pod 'AFNetworking'
-pod 'HTMLReader', :git=>'https://github.com/liunaijia/HTMLReader.git'
+pod 'HTMLReader'
 
 #use_frameworks!
 #pod 'Dollar'

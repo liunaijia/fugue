@@ -34,8 +34,8 @@ class InfoQArticleResponseSerializer : AFHTTPResponseSerializer {
     }
     
     func encodeImage(contentElement: HTMLElement) {
-        for imgNode in contentElement.nodesMatchingSelector("img") as [HTMLElement] {
-            let imgUrl = imgNode.objectForKeyedSubscript("src") as String
+        for imgNode in contentElement.nodesMatchingSelector("img") as! [HTMLElement] {
+            let imgUrl = imgNode.objectForKeyedSubscript("src") as! String
             let srcValue = createDataValue(imgUrl)
             imgNode.setObject(srcValue, forKeyedSubscript: "src")
         }

@@ -13,7 +13,7 @@ class ArticleListController: UITableViewController {
     
     var articleList: ArticleListView {
         get{
-            return tableView as ArticleListView
+            return tableView as! ArticleListView
         }
     }
     

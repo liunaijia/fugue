@@ -23,7 +23,7 @@ public class Regex {
     }
     
     public func matches(testStr: String) -> [AnyObject] {
-        let matches = self.expression.matchesInString(testStr, options: nil, range:NSMakeRange(0, countElements(testStr)))
+        let matches = self.expression.matchesInString(testStr, options: nil, range:NSMakeRange(0, count(testStr)))
         return matches
     }
     

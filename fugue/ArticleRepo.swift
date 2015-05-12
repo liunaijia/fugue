@@ -11,12 +11,12 @@ import CoreData
 
 class ArticleRepo {
     lazy var managedObjectContext : NSManagedObjectContext = {
-        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         return appDelegate.managedObjectContext!
     }()
     
     func insert(#header: ArticleHeader, body: ArticleBody) -> Article {
-        let article = NSEntityDescription.insertNewObjectForEntityForName("Article", inManagedObjectContext: self.managedObjectContext) as Article
+        let article = NSEntityDescription.insertNewObjectForEntityForName("Article", inManagedObjectContext: self.managedObjectContext) as! Article
         article.set(header: header, body: body)
         
         managedObjectContext.save()
@@ -27,7 +27,7 @@ class ArticleRepo {
     func getAll() -> [Article]? {
         var error: NSError?
         let fetchRequest = NSFetchRequest(entityName:"Article")
-        let fetchedResults = managedObjectContext.executeFetchRequest(fetchRequest, error: &error) as [Article]?
+        let fetchedResults = managedObjectContext.executeFetchRequest(fetchRequest, error: &error) as! [Article]?
         return fetchedResults
 //        if let results = fetchedResults {
 //            return results

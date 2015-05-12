@@ -14,7 +14,7 @@ class InfoQArticleListResponseSerializer : AFHTTPResponseSerializer {
         var articles = [ArticleHeader]()
         
         let document = HTMLDocument(data: data, contentTypeHeader: "text/html;charset=UTF-8")
-        for articleNode in document.firstNodeMatchingSelector("ul.l.l_large").childElementNodes as [HTMLElement] {
+        for articleNode in document.firstNodeMatchingSelector("ul.l.l_large").childElementNodes as! [HTMLElement] {
             let articleLinkNode = articleNode.firstNodeMatchingSelector("a.lt")
             
             
@@ -35,7 +35,7 @@ class InfoQArticleListResponseSerializer : AFHTTPResponseSerializer {
     }
     
     func getArticleUrl(articleLinkNode:HTMLElement) -> String {
-        return (articleLinkNode.objectForKeyedSubscript("href") as String).trim()
+        return (articleLinkNode.objectForKeyedSubscript("href") as! String).trim()
     }
     
     func getArticleSummary(articleNode:HTMLElement) -> String {
