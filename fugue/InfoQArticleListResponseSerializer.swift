@@ -61,7 +61,7 @@ class InfoQArticleListResponseSerializer : AFHTTPResponseSerializer {
         return nil
     }
     
-    func parseMonth(str: String) -> Int? {
+    private func parseMonth(str: String) -> Int? {
         let months:[String] = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"]
         for (index, month) in enumerate(months) {
             if month == str {
@@ -70,4 +70,6 @@ class InfoQArticleListResponseSerializer : AFHTTPResponseSerializer {
         }
         return nil
     }
+    
+    
 }

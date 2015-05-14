@@ -16,6 +16,7 @@ class Article: NSManagedObject {
     @NSManaged var url: String?
     @NSManaged var summary: String?
     @NSManaged var content: String?
+    @NSManaged var publishAt: NSDate?
     
     func set(#header: ArticleHeader, body: ArticleBody) {
         self.title = header.title
@@ -23,6 +24,7 @@ class Article: NSManagedObject {
         self.summary = header.summary
         self.author = header.author
         self.content = body.content
+        self.publishAt = header.publishAt
     }
 
 //    override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {

@@ -44,4 +44,23 @@ class ArticleRepo {
             managedObjectContext.save()
         }
     }
+    
+    func getLatestPublishDate() -> NSDate? {
+        let expression = NSExpressionDescription()
+        expression.name = "maxPublishDate"
+        expression.expression = NSExpression(forFunction: "max:", arguments: [NSExpression(forKeyPath: "publishAt")])
+        expression.expressionResultType = NSAttributeType.DateAttributeType
+        
+        let request = NSFetchRequest(entityName: "Article")
+        request.resultType = NSFetchRequestResultType.DictionaryResultType
+        request.propertiesToFetch = [expression]
+
+        if let results = managedObjectContext.executeFetchRequest(request, error: nil) as? [Dictionary<String, AnyObject>] {
+            if let result = results.first {
+                return result["maxPublishDate"] as? NSDate
+            }
+        }
+        
+        return .None
+    }
 }

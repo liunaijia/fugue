@@ -30,6 +30,8 @@ class ArticleListController: UITableViewController {
 
         
         let repo = ArticleRepo()
+        let latestArticlePublishedAt = repo.getLatestPublishDate()
+        println(latestArticlePublishedAt)
         articleList.articles = repo.getAll()
         
         //loadSavedArticles()
